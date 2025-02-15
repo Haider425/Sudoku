@@ -1,0 +1,326 @@
+/* add your styling and layout CSS here */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #fff;
+    color: #333;
+    height: 100%;
+}
+
+.navbar{
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+
+}
+
+.navbar-title {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+}
+
+.navbar-title a {
+    color: #ABB1BF;
+    padding: 0.5rem 0.75rem;
+}
+
+#navbarBasicExample .navbar-start a{
+  
+    text-align: center;
+}
+
+
+.mainGame .sudoku-grid {
+    border-collapse: collapse;
+    background-color: #ccc;
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.1);
+    
+}
+
+.mainGame .sudoku-cell {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #333;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 20px;
+    
+}
+.mainGame .border-right {
+    border-right: 2px solid #333;
+}
+.mainGame .border-bottom {
+    border-bottom: 2px solid #333;
+}
+.mainGame .border-left {
+    border-left: 2px solid #333;
+}
+.mainGame .border-top {
+    border-top: 2px solid #333;
+}
+
+
+.controlTable .sudoku-controls{
+    border-collapse: collapse;
+    margin: 0rem auto;
+    background-color: #ccc;
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.1);
+    position: relative;
+    top: 50px;
+}
+
+.controlTable .sudoku-cell{
+    width: 45px;
+    height: 45px;
+    border: 1px solid #333;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 20px;
+}
+
+.mainGame .sudoku-grid, .controlTable .sudoku-controls{
+    cursor: pointer;
+}
+
+.mainGame .sudoku-cell:hover, .controlTable .sudoku-cell:hover{
+    background-color: #f5dd90;
+}
+
+
+      @media screen and (max-width: 768px) {
+        .container {
+          padding-top: 60px; 
+        }
+
+        .mainGame .sudoku-cell {
+          width: 35px;
+          height: 35px;
+          font-size: 16px;
+        }
+
+        .controlTable .sudoku-cell {
+          width: 32px;
+          height: 32px;
+          font-size: 16px;
+        }
+
+        .controlTable {
+          margin-top: 1rem;
+        }
+
+        .sudoku-controls img{
+            width: 15px;
+            
+        }
+      }
+
+      @media screen and (max-width: 420px) {
+        .mainGame .sudoku-cell {
+          width: 30px;
+          height: 30px;
+          font-size: 14px;
+        }
+
+        .controlTable .sudoku-cell {
+          width: 28px;
+          height: 28px;
+          font-size: 14px;
+        }
+
+        .sudoku-controls img{
+            width: 12px;
+            
+        }
+      }
+
+      .border-right { border-right: 2px solid #333; }
+      .border-bottom { border-bottom: 2px solid #333; }
+      .border-left { border-left: 2px solid #333; }
+      .border-top { border-top: 2px solid #333; }
+
+
+/* Game Score Table */
+
+#highScores{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .gameScore{
+    border-collapse: collapse;
+    margin-top: 1rem;
+    height: auto;
+    flex-direction: column;
+    width: 20%;
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.1);
+    justify-content: space-around;
+    display: flex;
+    align-items: center;
+}
+
+.container .gameScore .gameTable{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.container .gameScore .gameTable th{
+    border-bottom: 1px solid #333;
+    text-align: center;
+    padding: 0.5rem;
+    color: #000000;
+}
+
+.container .gameScore .gameTable td{
+    text-align: center;
+    padding: 0.5rem;
+    color: #000000;
+}
+
+.sudoku-grid .sudoku-cell.initial {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+.sudoku-grid .sudoku-cell.error {
+    background-color: #ffebee;
+    color: #d32f2f;
+}
+
+.sudoku-controls .sudoku-cell.selected {
+    background-color: #e3f2fd;
+    font-weight: bold;
+}
+
+.sudoku-grid .sudoku-cell, .sudoku-controls .sudoku-cell {
+    transition: background-color 0.2s ease;
+}
+
+.controlTable {
+    margin-top: 2rem;
+}
+
+.sudoku-grid .sudoku-cell.initial {
+    cursor: not-allowed;
+}
+
+
+
+.high-scores-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#highScores {
+    width: 100%;
+    overflow-x: auto;
+}
+
+#highScores table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    margin: 1rem 0;
+}
+
+#highScores th {
+    background: #4a90e2;
+    color: white;
+    font-weight: 600;
+    padding: 1rem;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+}
+
+#highScores td {
+    padding: 1rem;
+    border-bottom: 1px solid #edf2f7;
+    color: #2d3748;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+#highScores tr:hover {
+    background-color: #f8fafc;
+    transition: background-color 0.2s ease;
+}
+
+#highScores tr:last-child td {
+    border-bottom: none;
+}
+
+
+#highScores tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+
+#highScores td:first-child {
+    font-weight: 500;
+}
+
+
+#highScores td:last-child {
+    font-family: 'Courier New', monospace;
+    color: #4a5568;
+}
+
+/* Responsive design */
+@media screen and (max-width: 640px) {
+    .high-scores-container {
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    #highScores th,
+    #highScores td {
+        padding: 0.75rem;
+        font-size: 0.875rem;
+    }
+}
+
+
+.loading {
+    text-align: center;
+    padding: 2rem;
+    color: #718096;
+}
+
+
+.no-scores {
+    text-align: center;
+    padding: 2rem;
+    color: #718096;
+    font-style: italic;
+}
+
+
+@keyframes highlightNew {
+    from { background-color: #ebf8ff; }
+    to { background-color: transparent; }
+}
+
+.new-score {
+    animation: highlightNew 2s ease-out;
+}
